@@ -1,0 +1,38 @@
+GD0111: Tools can only export tools or native types
+==================================================================
+
+====================================  ======================================
+                                      Value
+====================================  ======================================
+**Rule ID**                           GD0111
+**Category**                          Usage
+**Fix is breaking or non-breaking**   Breaking
+**Enabled by default**                Yes
+====================================  ======================================
+
+Cause
+-----
+
+A type that has the ``Tool`` attribute contains an exported field or property of
+a script type that doesn't have the ``Tool`` attribute.
+
+Rule description
+----------------
+
+Script types that do not have the ``Tool`` attribute are not instantiated by
+the editor. Types that do have the ``Tool`` attribute cannot interact with these
+script types within the editor.
+
+How to fix violations
+---------------------
+
+To fix a violation of this rule, avoid exporting non-tool members from a tool type,
+add the ``Tool`` attribute to the type of the exported member, or remove the ``Tool``
+attribute from the type that has the exported member.
+
+When to suppress warnings
+-------------------------
+
+Do not suppress a warning from this rule. Types that don't have the ``Tool``
+attribute will not be instantiated by the editor, resulting in unexpected runtime
+errors when attempting to set a value to the exported member.

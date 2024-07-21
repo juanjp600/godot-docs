@@ -25,6 +25,7 @@ or unsupported code and let you know that something is wrong during build time.
    GD0105
    GD0106
    GD0107
+   GD0111
    GD0201
    GD0202
    GD0203
